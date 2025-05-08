@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "budgetpro.client", "budgetpro.client\budgetpro.client.esproj", "{FAEF70B4-F11D-954E-1723-60F2B8ED89D2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetPro.Server", "BudgetPro.Server\BudgetPro.Server.csproj", "{B30DCAB4-8A1A-4E1E-A93A-120ECF859C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetPro.Test", "BudgetPro.Test\BudgetPro.Test.csproj", "{8161A9DC-4686-460B-B870-EC2C12D621A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{B30DCAB4-8A1A-4E1E-A93A-120ECF859C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B30DCAB4-8A1A-4E1E-A93A-120ECF859C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B30DCAB4-8A1A-4E1E-A93A-120ECF859C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8161A9DC-4686-460B-B870-EC2C12D621A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8161A9DC-4686-460B-B870-EC2C12D621A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8161A9DC-4686-460B-B870-EC2C12D621A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8161A9DC-4686-460B-B870-EC2C12D621A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
