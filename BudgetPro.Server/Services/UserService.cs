@@ -24,6 +24,26 @@ public class UserService : IUserService
             .ToListAsync();
     }
 
+    public async Task<UserDTO> GetUserByEmail(string email)
+    {
+        using var context = await dbContextFactory.CreateDbContextAsync();
+
+        return await context.Users
+            .Where(x => x.Email == email)
+            .Select(x => x.ToDTO())
+            .FirstOrDefaultAsync() ?? new UserDTO();
+    }
+
+    public async Task<UserDTO> GetUserById(int id)
+    {
+        using var context = await dbContextFactory.CreateDbContextAsync();
+
+        return await context.Users
+            .Where(x => x.Id == id)
+            .Select(x => x.ToDTO())
+            .FirstOrDefaultAsync() ?? new UserDTO();
+    }
+
     public async Task<UserDTO> RegisterNewUser(RegisterUserRequest request)
     {
         if (request is null)

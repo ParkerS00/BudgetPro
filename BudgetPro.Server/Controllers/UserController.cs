@@ -28,4 +28,16 @@ public class UserController : Controller
     {
         return await userService.RegisterNewUser(request);
     }
+
+    [HttpPost("GetByEmail")]
+    public async Task<UserDTO> GetUserByEmail(string email)
+    {
+        return await userService.GetUserByEmail(email);
+    }
+
+    [HttpPost("GetById")]
+    public async Task<UserDTO> GetUserById(int id)
+    {
+        return await userService.GetUserById(id);
+    }
 }
