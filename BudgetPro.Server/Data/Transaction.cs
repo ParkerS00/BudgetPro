@@ -5,11 +5,11 @@ namespace BudgetPro.Server.Data;
 
 public partial class Transaction
 {
-    public long Id { get; set; }
+    public int Id { get; set; }
 
-    public long UserId { get; set; }
+    public int UserId { get; set; }
 
-    public long CategoryId { get; set; }
+    public int CategoryId { get; set; }
 
     public double Amount { get; set; }
 

@@ -5,7 +5,7 @@ namespace BudgetPro.Server.Data;
 
 public partial class User
 {
-    public long Id { get; set; }
+    public int Id { get; set; }
 
     public DateTime CreatedAt { get; set; }
 

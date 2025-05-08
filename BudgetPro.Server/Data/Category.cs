@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace BudgetPro.Server.Data;
+﻿namespace BudgetPro.Server.Data;
 
 /// <summary>
 /// Categories for expenses/income
 /// </summary>
 public partial class Category
 {
-    public long Id { get; set; }
+    public int Id { get; set; }
 
     public string Name { get; set; } = null!;
 
     public bool IsIncome { get; set; }
 
-    public long UserId { get; set; }
+    public int UserId { get; set; }
 
     public virtual ICollection<Budget> Budgets { get; set; } = new List<Budget>();
 
