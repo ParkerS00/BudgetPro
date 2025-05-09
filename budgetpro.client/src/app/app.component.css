@@ -1,1 +1,4 @@
-﻿
+﻿.content {
+  padding-top: 48px;
+  background-color: var(--primary-color);
+}

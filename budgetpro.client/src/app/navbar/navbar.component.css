@@ -1,13 +1,13 @@
-/* styles.css or component CSS file */
-
 .navbar {
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
-  padding: 0.75rem 1.5rem;
-  background-color: #2c3e50;
-  color: white;
+  padding: 0.75rem;
+  background-color: var(--secondary-color);
+  border-bottom: 2px solid var(--text-color);
+  border-top: 2px solid var(--text-color);
+  color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +29,7 @@
 }
 
 .navbar-links a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -37,7 +37,8 @@
 
 .navbar-links a:hover,
 .navbar-links a.active {
-  color: #1abc9c;
+  color: var(--accent-color);
+  cursor: pointer;
 }
 
 .navbar-actions {
@@ -53,27 +54,14 @@
   font-weight: 500;
 }
 
-.btn-primary {
-  background-color: #1abc9c;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #16a085;
-}
-
+.btn-primary,
 .btn-secondary {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
+  background-color: var(--accent-color);
+  color: var(--text-color);
 }
 
+.btn-primary:hover,
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
+  background-color: var(--primary-color);
+  transition: 0.5s;
 }
