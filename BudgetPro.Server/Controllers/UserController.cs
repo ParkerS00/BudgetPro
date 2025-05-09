@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BudgetPro.Server.Controllers;
 
 [ApiController]
-[Route("Controller")]
+[Route("[Controller]")]
 public class UserController : Controller
 {
     private readonly IUserService userService;
@@ -24,9 +24,16 @@ public class UserController : Controller
     }
 
     [HttpPost("AddUser")]
-    public async Task<UserDTO> RegisterNewUser(RegisterUserRequest request)
+    public async Task<IActionResult> RegisterNewUser(RegisterUserRequest request)
     {
-        return await userService.RegisterNewUser(request);
+        var result = await userService.RegisterNewUser(request);
+
+        if (result.Email is null)
+        {
+            return Conflict(new { message = "User already exists" });
+        }
+
+        return Ok(new { message = "User Created successfully" });
     }
 
     [HttpPost("GetByEmail")]

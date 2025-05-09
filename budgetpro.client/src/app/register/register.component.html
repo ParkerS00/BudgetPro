@@ -1,10 +1,24 @@
 <div class="register-container">
   <div class="register-card">
     <h2>Register</h2>
-    <form>
+    <form (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="email">Email</label>
-        <input id="email" type="email" placeholder="Enter your email" />
+        <div *ngIf="emailError" class="error-message">{{ emailError }}</div>
+        <div *ngIf="emailSuccess" class="success-message">
+          Your email has been registered successfully!
+        </div>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          [(ngModel)]="email"
+          [ngClass]="{
+            'error-border': emailError,
+            'success-border': emailSuccess
+          }"
+        />
       </div>
       <button type="submit" class="btn-submit">Register</button>
     </form>

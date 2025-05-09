@@ -9,12 +9,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo
     {
         Title = "BudgetPro API",
         Version = "v1"
+    });
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularDev", policy =>
+    {
+        policy.WithOrigins("https://localhost:58237") 
+              .AllowAnyHeader()
+              .AllowAnyMethod();
     });
 });
 
@@ -38,6 +49,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowAngularDev");
 
 app.UseAuthorization();
 
