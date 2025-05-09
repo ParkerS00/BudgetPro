@@ -19,8 +19,7 @@ export class RegisterComponent {
 
   onSubmit() {
     this.authService.registerUser(this.email).subscribe({
-      next: (res) => {
-        console.log('Success', res);
+      next: () => {
         this.email = '';
         this.emailError = '';
         this.emailSuccess = true;

@@ -1,6 +1,7 @@
 ﻿using BudgetPro.Server.DTOs;
 using BudgetPro.Server.Interfaces;
 using BudgetPro.Server.Requests.AddRequests;
+using BudgetPro.Server.Requests.GetRequests;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -37,9 +38,9 @@ public class UserController : Controller
     }
 
     [HttpPost("GetByEmail")]
-    public async Task<UserDTO> GetUserByEmail(string email)
+    public async Task<UserDTO> GetUserByEmail(FindUserRequest request)
     {
-        return await userService.GetUserByEmail(email);
+        return await userService.GetUserByEmail(request.Email ?? "");
     }
 
     [HttpPost("GetById")]
