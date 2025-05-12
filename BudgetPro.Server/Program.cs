@@ -33,6 +33,7 @@ builder.Services.AddDbContextFactory<BudgetDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddSingleton<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 

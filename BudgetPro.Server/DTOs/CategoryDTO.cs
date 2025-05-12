@@ -8,7 +8,6 @@ public class CategoryDTO
     public string? Name { get; set; }
     public bool IsIncome { get; set; }
     public int UserId { get; set; }
-    public UserDTO User { get; set; } = new();
 }
 
 public static class CategoryConverter
@@ -25,7 +24,6 @@ public static class CategoryConverter
             Id = category.Id,
             IsIncome = category.IsIncome,
             Name = category.Name,
-            User = category.User.ToDTO(),
             UserId = category.UserId
         };
     }
