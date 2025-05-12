@@ -11,6 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 65px;
 }
 
 .navbar-logo img {
@@ -64,4 +65,10 @@
 .btn-secondary:hover {
   background-color: var(--primary-color);
   transition: 0.5s;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }

@@ -13,7 +13,8 @@
     <a class="btn btn-primary" routerLink="/login">Login</a>
     <a class="btn btn-secondary" routerLink="/register">Register</a>
   </div>
-  <div class="navbar-actions" *ngIf="user">
+  <div class="user-details" *ngIf="user">
     <p>{{ user.email }}</p>
+    <a class="btn btn-secondary" routerLink="/" (click)="logOut()">Log Out</a>
   </div>
 </nav>

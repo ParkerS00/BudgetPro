@@ -20,4 +20,8 @@ export class NavbarComponent implements OnInit {
       this.user = user;
     });
   }
+
+  logOut() {
+    this.user = null;
+  }
 }
