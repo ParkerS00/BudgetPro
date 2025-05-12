@@ -1,20 +1,48 @@
 <nav class="navbar">
   <div class="navbar-logo">
-    <img
-      src="../../../public/favicon.ico"
-      alt="Budget Pro Logo"
-      aria-label="Budget Pro Logo"
-    />
+    <i class="fa-solid fa-calculator"></i>
   </div>
   <ul class="navbar-links">
-    <li><a routerLink="/">Home</a></li>
+    <li>
+      <a routerLink="/">
+        Home
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/budget">
+        Budget
+        <i class="fa-solid fa-dollar-sign"></i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/transactions">
+        Transaction
+        <i class="fa-solid fa-money-bill-wave"></i>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/goals">
+        Goals
+        <i class="fa-solid fa-bullseye"></i>
+      </a>
+    </li>
   </ul>
   <div class="navbar-actions" *ngIf="!user">
-    <a class="btn btn-primary" routerLink="/login">Login</a>
-    <a class="btn btn-secondary" routerLink="/register">Register</a>
+    <a class="btn btn-primary" routerLink="/login">
+      <span>Login</span>
+      <i class="fa-solid fa-user"></i>
+    </a>
+    <a class="btn btn-secondary" routerLink="/register"
+      ><span>Register</span>
+      <i class="fa-solid fa-user-plus"></i>
+    </a>
   </div>
   <div class="user-details" *ngIf="user">
     <p>{{ user.email }}</p>
-    <a class="btn btn-secondary" routerLink="/" (click)="logOut()">Log Out</a>
+    <a class="btn btn-secondary" routerLink="/" (click)="logOut()">
+      Log Out
+      <i class="fa-solid fa-sign-out-alt"></i>
+    </a>
   </div>
 </nav>
