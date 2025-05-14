@@ -9,14 +9,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RegisterComponent } from './register/register.component';
+import { BudgetComponent } from './budget/budget.component';
+import { TransactionComponent } from './transaction/transaction.component';
+import { GoalComponent } from './goal/goal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, BudgetComponent, GoalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NavbarComponent,
     RegisterComponent,
+    TransactionComponent,
+    BrowserAnimationsModule,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],

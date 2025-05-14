@@ -15,6 +15,12 @@ html {
   background-color: var(--primary-color);
 }
 
+.custom-snackbar {
+  background-color: var(--text-color);
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
 }

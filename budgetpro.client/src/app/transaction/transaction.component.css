@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-heading {
+  font-weight: 600;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-check {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  gap: 10px;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: large;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-yes {
+  color: var(--text-color);
+  background-color: var(--accent-color);
+}
+
+.category-yes:hover {
+  background-color: rgb(64, 221, 64);
+  transition: 0.5s;
+}
+
+.category-no {
+  color: var(--text-color);
+  background-color: var(--accent-color);
+}
+.category-no:hover {
+  background-color: rgb(243, 43, 43);
+  transition: 0.5s;
+}
+
+.category-select {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  justify-content: center;
+  font-size: large;
+}
+
+.category-submit {
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: large;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-submit:hover {
+  background-color: rgb(64, 221, 64);
+  transition: 0.5s;
+}

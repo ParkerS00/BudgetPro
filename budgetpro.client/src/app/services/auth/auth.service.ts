@@ -29,7 +29,6 @@ export class AuthService {
   constructor(private httpClient: HttpClient) {}
 
   getUser(): User | null {
-    console.log('getUser', this.userSubject.value);
     return this.userSubject.value;
   }
 
