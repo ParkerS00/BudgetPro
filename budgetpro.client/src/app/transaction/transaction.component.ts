@@ -10,13 +10,20 @@ import { FormsModule } from '@angular/forms';
 import { User, AuthService } from '../services/auth/auth.service';
 import { RouterModule } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { YesNoButtonsComponent } from '../shared/yes-no-buttons/yes-no-buttons.component';
 
 @Component({
   selector: 'app-transaction',
   standalone: true,
   templateUrl: './transaction.component.html',
   styleUrls: ['./transaction.component.css'],
-  imports: [CommonModule, FormsModule, RouterModule, MatSnackBarModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    MatSnackBarModule,
+    YesNoButtonsComponent,
+  ],
 })
 export class TransactionComponent {
   categories: Category[] = [];
@@ -42,12 +49,6 @@ export class TransactionComponent {
   ) {}
 
   ngOnInit() {
-    this.snackBar.open('Testing snackbar', 'Close', {
-      panelClass: ['custom-snackbar', 'custom-button'],
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
-    });
-
     this.categoryService.getAllCategories().subscribe({
       next: (data: Category[]) => {
         this.categories = data;
@@ -79,12 +80,18 @@ export class TransactionComponent {
         this.buttonClicked = false;
         this.snackBar.open('Category added successfully!', 'Close', {
           duration: 2000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
+          panelClass: ['custom-snackbar', 'custom-button'],
         });
       },
       error: (err) => {
         console.error('Error adding category:', err);
         this.snackBar.open('Error adding category', 'Close', {
           duration: 2000,
+          verticalPosition: 'top',
+          horizontalPosition: 'center',
+          panelClass: ['custom-snackbar', 'custom-button'],
         });
       },
     });

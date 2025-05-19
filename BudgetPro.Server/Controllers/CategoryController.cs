@@ -24,16 +24,9 @@ public class CategoryController : Controller
     }
 
     [HttpPost("Add")]
-    public async Task<IActionResult> AddNewCategory(AddCategoryRequest request)
+    public async Task<CategoryDTO> AddNewCategory(AddCategoryRequest request)
     {
-        var result = await categoryService.AddCategory(request);
-
-        if (result.Name is null)
-        {
-            return Conflict(new { message = "Category already exists" });
-        }
-
-        return Ok(new { message = "Category created successfully" });
+        return await categoryService.AddCategory(request);
     }
 
     [HttpPost("GetByName")]
