@@ -34,6 +34,7 @@ builder.Services.AddDbContextFactory<BudgetDbContext>(options =>
 
 builder.Services.AddSingleton<IUserService, UserService>();
 builder.Services.AddSingleton<ICategoryService, CategoryService>();
+builder.Services.AddSingleton<IBudgetService, BudgetService>();
 
 var app = builder.Build();
 

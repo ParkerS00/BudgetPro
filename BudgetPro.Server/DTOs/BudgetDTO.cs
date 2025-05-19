@@ -9,6 +9,7 @@ public class BudgetDTO
     public int? CategoryId { get; set; }
     public double Amount { get; set; }
     public DateOnly? TimeFrame { get; set; }
+    public string? Name { get; set; }
     public CategoryDTO? Category { get; set; } = new();
     public UserDTO User { get; set; } = new();
 }
@@ -29,6 +30,7 @@ public static class BudgetConverter
             CategoryId = budget.CategoryId,
             Id = budget.Id,
             TimeFrame = budget.Timeframe,
+            Name = budget.Name,
             User = budget.User.ToDTO(),
             UserId = budget.UserId
         };

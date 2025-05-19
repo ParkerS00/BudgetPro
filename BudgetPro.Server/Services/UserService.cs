@@ -20,6 +20,9 @@ public class UserService : IUserService
         using var context = await dbContextFactory.CreateDbContextAsync();
 
         return await context.Users
+            .Include(x => x.Transactions)
+            .Include(x => x.Budgets)
+            .Include(x => x.Categories)
             .Select(x => x.ToDTO())
             .ToListAsync();
     }
@@ -29,6 +32,9 @@ public class UserService : IUserService
         using var context = await dbContextFactory.CreateDbContextAsync();
 
         return await context.Users
+            .Include(x => x.Transactions)
+            .Include(x => x.Budgets)
+            .Include(x => x.Categories)
             .Where(x => x.Email == email)
             .Select(x => x.ToDTO())
             .FirstOrDefaultAsync() ?? new UserDTO();
@@ -39,6 +45,9 @@ public class UserService : IUserService
         using var context = await dbContextFactory.CreateDbContextAsync();
 
         return await context.Users
+            .Include(x => x.Transactions)
+            .Include(x => x.Budgets)
+            .Include(x => x.Categories)
             .Where(x => x.Id == id)
             .Select(x => x.ToDTO())
             .FirstOrDefaultAsync() ?? new UserDTO();

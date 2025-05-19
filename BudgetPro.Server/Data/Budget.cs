@@ -12,6 +12,8 @@ public partial class Budget
 
     public DateOnly? Timeframe { get; set; }
 
+    public string? Name { get; set; }
+
     public virtual Category? Category { get; set; }
 
     public virtual User User { get; set; } = null!;
