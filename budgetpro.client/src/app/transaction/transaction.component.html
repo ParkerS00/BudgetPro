@@ -52,8 +52,4 @@
   </div>
 </div>
 
-<div class="container" *ngIf="!user">
-  <h1 class="container-heading">Transaction</h1>
-  <p class="error-message">Please log in to view this page.</p>
-  <button class="btn" routerLink="/login">Login</button>
-</div>
+<app-not-logged-in [user]="user" [heading]="'Transactions'"></app-not-logged-in>

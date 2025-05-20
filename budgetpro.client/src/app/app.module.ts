@@ -15,7 +15,7 @@ import { GoalComponent } from './goal/goal.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, BudgetComponent, GoalComponent],
+  declarations: [AppComponent, GoalComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterComponent,
     TransactionComponent,
     BrowserAnimationsModule,
+    BudgetComponent,
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())],
   bootstrap: [AppComponent],

@@ -47,4 +47,8 @@ export class AuthService {
       .post<User>(`${this.apiUrl}/User/GetByEmail`, requestBody)
       .pipe(tap((user) => this.setUser(user)));
   }
+
+  logUserOut() {
+    this.setUser(null);
+  }
 }

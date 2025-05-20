@@ -38,7 +38,8 @@ public class BudgetService : IBudgetService
             Amount = request.Amount,
             CategoryId = request.CategoryId,
             Name = request.Name,
-            Timeframe = request.TimeFrame,
+            EndDate = request.EndDate,
+            StartDate = request.StartDate,
             UserId = request.UserId
         };
 
@@ -95,7 +96,7 @@ public class BudgetService : IBudgetService
 
     public async Task<BudgetDTO> GetBudgetByTimeFrame(FindBudgetRequest request)
     {
-        if (request is null || request.TimeFrame is null || request.UserId <= 0)
+        if (request is null || request.StartDate is null || request.UserId <= 0)
         {
             return new BudgetDTO();
         }
@@ -105,7 +106,7 @@ public class BudgetService : IBudgetService
         return await context.Budgets
             .Include(x => x.User)
             .Include(x => x.Category)
-            .Where(x => x.UserId == request.UserId && x.Timeframe == request.TimeFrame)
+            .Where(x => x.UserId == request.UserId && x.StartDate == request.StartDate)
             .Select(x => x.ToDTO())
             .FirstOrDefaultAsync() ?? new BudgetDTO();
     }

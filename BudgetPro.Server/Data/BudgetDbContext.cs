@@ -50,7 +50,8 @@ public partial class BudgetDbContext : DbContext
                 .HasDefaultValueSql("'0'::real")
                 .HasColumnName("amount");
             entity.Property(e => e.CategoryId).HasColumnName("category_id");
-            entity.Property(e => e.Timeframe).HasColumnName("timeframe");
+            entity.Property(e => e.EndDate).HasColumnName("end_date");
+            entity.Property(e => e.StartDate).HasColumnName("start_date");
             entity.Property(e => e.UserId).HasColumnName("user_id");
             entity.Property(e => e.Name).HasColumnName("name");
 

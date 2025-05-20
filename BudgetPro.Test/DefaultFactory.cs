@@ -12,7 +12,7 @@ public static class DefaultFactory
             Category = new Category(),
             CategoryId = 1,
             Id = 1,
-            Timeframe = new DateOnly(2025, 5, 8),
+            EndDate = new DateOnly(2025, 5, 8),
             User = new User(),
             UserId = 1
         };

@@ -8,7 +8,8 @@ public class BudgetDTO
     public int UserId { get; set; }
     public int? CategoryId { get; set; }
     public double Amount { get; set; }
-    public DateOnly? TimeFrame { get; set; }
+    public DateOnly? EndDate { get; set; }
+    public DateOnly? StartDate { get; set; }
     public string? Name { get; set; }
     public CategoryDTO? Category { get; set; } = new();
     public UserDTO User { get; set; } = new();
@@ -29,7 +30,8 @@ public static class BudgetConverter
             Category = budget.Category?.ToDTO(),
             CategoryId = budget.CategoryId,
             Id = budget.Id,
-            TimeFrame = budget.Timeframe,
+            EndDate = budget.EndDate,
+            StartDate = budget.StartDate,
             Name = budget.Name,
             User = budget.User.ToDTO(),
             UserId = budget.UserId

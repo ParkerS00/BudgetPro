@@ -11,6 +11,7 @@ import { User, AuthService } from '../services/auth/auth.service';
 import { RouterModule } from '@angular/router';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { YesNoButtonsComponent } from '../shared/yes-no-buttons/yes-no-buttons.component';
+import { NotLoggedInComponent } from '../shared/not-logged-in/not-logged-in.component';
 
 @Component({
   selector: 'app-transaction',
@@ -23,7 +24,8 @@ import { YesNoButtonsComponent } from '../shared/yes-no-buttons/yes-no-buttons.c
     RouterModule,
     MatSnackBarModule,
     YesNoButtonsComponent,
-  ],
+    NotLoggedInComponent
+],
 })
 export class TransactionComponent {
   categories: Category[] = [];

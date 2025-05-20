@@ -1,1 +1,84 @@
-<p>budget works!</p>
+<div class="container" *ngIf="user">
+  <h1 class="container-heading">Budget</h1>
+  <div *ngIf="!buttonClicked">
+    <app-yes-no-buttons
+      [question]="'Do you need to make a new budget?'"
+      [yesLabel]="'Yes?'"
+      [noLabel]="'No?'"
+      (answer)="setBudgetChoice($event)"
+    ></app-yes-no-buttons>
+  </div>
+  <div *ngIf="buttonClicked">
+    <form (ngSubmit)="onSubmit()" class="budget-form" #budgetForm="ngForm">
+      <div class="form-group">
+        <label for="budgetName">Budget Name</label>
+        <input
+          type="text"
+          id="budgetName"
+          class="form-control"
+          [(ngModel)]="budgetName"
+          name="budgetName"
+          required
+        />
+      </div>
+      <div *ngIf="budgetName">
+        <label for="budgetAmount">Budget Amount</label>
+        <input
+          type="number"
+          id="budgetAmount"
+          class="form-control"
+          [(ngModel)]="budgetAmount"
+          name="budgetAmount"
+          required
+        />
+      </div>
+      <div *ngIf="budgetAmount > 0">
+        <label for="budgetCategory">Budget Category</label>
+        <select
+          id="budgetCategory"
+          class="form-control"
+          [(ngModel)]="budgetCategoryId"
+          name="budgetCategory"
+          required
+        >
+          <option *ngFor="let category of categories" [value]="category.id">
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+      <div *ngIf="budgetCategoryId">
+        <label for="budgetStartDate">Budget Start Date</label>
+        <input
+          type="date"
+          id="budgetStartDate"
+          class="form-control"
+          [(ngModel)]="budgetStartDate"
+          name="budgetStartDate"
+          required
+        />
+      </div>
+      <div *ngIf="budgetCategoryId && budgetStartDate">
+        <label for="budgetEndDate">Budget End Date</label>
+        <input
+          type="date"
+          id="budgetEndDate"
+          class="form-control"
+          [(ngModel)]="budgetEndDate"
+          name="budgetEndDate"
+          required
+        />
+      </div>
+      <div *ngIf="budgetEndDate > budgetStartDate">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!budgetForm.form.valid"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<app-not-logged-in [user]="user" [heading]="'Budgets'"></app-not-logged-in>

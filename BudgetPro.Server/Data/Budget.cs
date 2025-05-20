@@ -10,7 +10,9 @@ public partial class Budget
 
     public double Amount { get; set; }
 
-    public DateOnly? Timeframe { get; set; }
+    public DateOnly? EndDate { get; set; }
+
+    public DateOnly? StartDate { get; set; }
 
     public string? Name { get; set; }
 

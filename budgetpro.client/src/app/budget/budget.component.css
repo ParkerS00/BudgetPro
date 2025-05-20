@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-heading {
+  font-weight: 600;
+}
+
+.budget-form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.form-group,
+.budget-form > div {
+  margin-bottom: 16px;
+}
+
+.budget-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.budget-form input[type="text"],
+.budget-form input[type="number"],
+.budget-form input[type="date"],
+.budget-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.budget-form input:focus,
+.budget-form select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  outline: none;
+}
+
+.budget-form button[type="submit"] {
+  margin-top: 12px;
+  background-color: #4a90e2;
+  color: white;
+  padding: 10px 16px;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.budget-form button[type="submit"]:hover {
+  background-color: #357ab8;
+}

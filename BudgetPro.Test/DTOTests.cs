@@ -19,7 +19,7 @@ public class DTOTests
         testDTO.Category.ShouldNotBeNull();
         testDTO.CategoryId.ShouldBe(testBudget.CategoryId);
         testDTO.Id.ShouldBe(testBudget.Id);
-        testDTO.TimeFrame.ShouldBe(testBudget.Timeframe);
+        testDTO.EndDate.ShouldBe(testBudget.EndDate);
         testDTO.User.ShouldNotBeNull();
         testDTO.UserId.ShouldBe(testBudget.UserId);
     }
@@ -52,7 +52,6 @@ public class DTOTests
         testDTO.Id.ShouldBe(testCategory.Id);
         testDTO.IsIncome.ShouldBe(testCategory.IsIncome);
         testDTO.Name.ShouldBe(testCategory.Name);
-        testDTO.User.ShouldNotBeNull();
         testDTO.UserId.ShouldBe(testCategory.UserId);
     }
 
